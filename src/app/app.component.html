@@ -1,0 +1,25 @@
+<nav class="navbar navbar-dark">
+    <div class="container-fluid justify-content-center">
+        <span class="nav">Lista de Personajes</span>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3" *ngFor = "let personaje of arrPersonajes">
+            <div class="personaje" [ngClass]="{ vivo: (personaje.status==='Alive'), muerto:( personaje.status==='Dead') }" >
+                <img class="image" [src]="personaje.image" alt="">
+                <h3 class="name text-uppercase">{{ personaje.name }}</h3>
+                <p class="species">{{ personaje.species }}</p>
+            </div>
+        </div>
+    </div>    
+    <div class="botones btn-toolbar justify-content-center" role="toolbar" >
+        <div class="btn-group me-2" role="group">
+            <button class="btn siguiente" (click)="changePage(false)" [disabled]="currentPage===1">Anterior</button>
+            <button  class="btn currentPage" type="button">{{ currentPage }}</button>
+            <button class="btn anterior" (click)="changePage(true)" [disabled]="currentPage===numPages">Siguiente</button>
+        </div>
+    </div>
+</div>
+
