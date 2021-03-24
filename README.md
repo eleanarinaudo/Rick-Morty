@@ -1,6 +1,6 @@
 # Rick & Morty
 
-![alt text]( "Rick & Morty API Web")
+![Rick&Morty]( img/image.gif "Rick & Morty API Web")
 
 
 ------
